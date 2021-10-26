@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import manatee from './assets/img/manatee.jpeg';
 import './App.css';
 
-import { getManateeJoke, getBackgroundImage } from './services/index';
+import { getManateeJoke } from './services/index';
 
 function App() {
   const [clicked, setClicked] = useState(false);
