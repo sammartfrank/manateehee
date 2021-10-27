@@ -32,22 +32,20 @@ function App() {
   return (
     <div className='App'>
       <header className='App-header'>
-        <img src={manatee} className='manatee' alt='manatee' />
         {!isLoading ? (
-          <div>
-            <p>{joke.setup}</p>
+          <>
+            <p className='setup'>{joke.setup}</p>
             {joke.punchline && (
-              <p
-                onClick={handleShow}
-                className={`punchline${clicked ? '-show' : ''}`}
-              >
-                {joke.punchline}
-              </p>
+              <div className={`punchline${clicked ? '-show' : ''}`}>
+                <p className='text' onClick={handleShow}>
+                  {joke.punchline}
+                </p>
+              </div>
             )}
-          </div>
+          </>
         ) : (
-          <div>Loading joke..</div>
-          )}
+          <div style={{ color: 'goldenrod', background: 'rgb(85, 37, 130)', padding: '1rem' }}>Loading joke..</div>
+        )}
         <div className='button-wrapper'>
           <button
             className='button'

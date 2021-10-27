@@ -10,35 +10,10 @@ export const getManateeJoke = async () => {
         },
       }
     );
-    const result = await response.json()
+    const result = await response.json();
     return result;
   } catch (error) {
     console.error('The error: ', error);
     return new Error(`The Error: ${error}`);
   }
 };
-
-
-export const getBackgroundImage = async () => {
-    try {
-        const response = await fetch('https://api.unsplash.com/', {
-
-        });
-        console.log('🚀 -----------------------');
-        console.log('🚀 ~ response', response);
-        console.log('🚀 -----------------------');
-    } catch (error) {
-        console.error('getBackgroundImage error: ', error)
-        return new Error('getBackground  error')
-    }
-}
-
-
-export const getAuthToken = async () => {
-        const auth = await fetch('https://unsplash.com/oauth/authorize', {
-            client_id: process.env.API_KEY,
-            redirect_uri: '',
-            response_type: '',
-        });
-
-}

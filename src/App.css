@@ -2,14 +2,7 @@
   text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: transparent;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -17,21 +10,67 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  background: url('./assets/img/manatee.jpeg');
   font-weight: 700;
 }
+@media only screen and (max-width: 600px) {
+  .App-header {
+    background: lightblue;
+    background: url('./assets/img/manateen.png');
+    background-size: cover;
+    padding: 0 1rem;
+    color: magenta;
+    font-weight: 900;
+    letter-spacing: 0.3rem;
+  }
+  .App-header .setup {
+    background: white;
+    border-radius: 5px;
+    padding: 1rem 0;
+  }
+}
 .punchline {
-  background: white;
-  padding: 2rem;
+  padding: 1rem;
   border-radius: 10px;
+  text-transform: capitalize;
+  background: repeating-linear-gradient(
+    -55deg,
+    #222,
+    #222 10px,
+    #333 10px,
+    #333 20px
+  );
+  filter: blur(7px);
+}
 
+.punchline-show {
+  filter: blur(0);
+  padding: 1rem;
+  border-radius: 10px;
+  text-transform: capitalize;
+  background: repeating-linear-gradient(
+    -55deg,
+    #222,
+    #222 10px,
+    #333 10px,
+    #333 20px
+  );
 }
 .punchline:hover {
   cursor: pointer;
 }
-
-.punchline-show {
-  background: transparent;
+.setup {
 }
+
+.text {
+  letter-spacing: 0.3rem;
+}
+
+.text::selection {
+  color: cyan;
+  background: magenta;
+}
+
 .button-wrapper {
   padding: 2rem 0;
 }
@@ -41,6 +80,7 @@
   color: white;
   padding: 1rem;
   border-radius: 10px;
+  font-size: calc(10px + 2vmin);
 }
 .button:hover {
   cursor: pointer;
@@ -48,8 +88,9 @@
   border: none;
 }
 .button[disabled] {
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   color: darkgray;
+  cursor: not-allowed;
 }
 
 .App-link {
@@ -61,17 +102,4 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-button {
-  font-size: calc(10px + 2vmin);
 }
